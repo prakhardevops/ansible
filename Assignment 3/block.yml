@@ -1,0 +1,30 @@
+---
+- name: Host File Playbook
+  hosts: localhost
+  become: true
+  tasks:
+  
+  - name: Ubuntu Block
+    blockinfile:
+     path: "/home/ubuntu/Opstree/Ansible/Assignment 3/hosts_new"
+     marker: "# {mark} ANSIBLE MANAGED BLOCK - Ubuntu"
+     block: |
+      [ubuntu]
+      18.116.35.83 ansible_user=ubuntu ansible_ssh_private_key_file=/home/ubuntu/Documents/prakhar_aws_key.pem
+      
+  - name: RedHat Block
+    blockinfile:
+     path: "/home/ubuntu/Opstree/Ansible/Assignment 3/hosts_new"
+     marker: "# {mark} ANSIBLE MANAGED BLOCK - RedHat"
+     block: |
+      [redhat]
+      3.138.201.108 ansible_user=ec2-user ansible_ssh_private_key_file=/home/ubuntu/Documents/prakhar_aws_key.pem  
+      
+  - name: All Block
+    blockinfile:
+     path: "/home/ubuntu/Opstree/Ansible/Assignment 3/hosts_new"
+     marker: "# {mark} ANSIBLE MANAGED BLOCK - All"
+     block: |
+      [all:children]
+      ubuntu
+      redhat
