@@ -1,0 +1,6 @@
+---
+- name: Tomcat Playbook
+  hosts: all
+  become: true
+  roles:
+  - name: tomcat
