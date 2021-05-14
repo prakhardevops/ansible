@@ -1,0 +1,7 @@
+---
+java_version : 11
+tomcat_url : "https://downloads.apache.org/tomcat/tomcat-9/v9.0.45/bin/apache-tomcat-9.0.45.tar.gz"
+ubuntu_server : 13.58.79.231
+redhat_server : 3.134.108.249
+artifact_right : WebApp
+artifact_wrong : WebApps

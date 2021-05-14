@@ -1,0 +1,3 @@
+---
+java_version : 11
+tomcat_url : "https://downloads.apache.org/tomcat/tomcat-9/v9.0.45/bin/apache-tomcat-9.0.45.tar.gz"

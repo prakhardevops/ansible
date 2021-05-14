@@ -1,0 +1,17 @@
+---
+- name: Copy .war files to the webapp directory
+  copy:
+   src: '/var/lib/jenkins/workspace/Ansible Assignment 5/Build/target/WebApp.war'
+   dest: /opt/tomcat/webapps/
+
+- name: Start and enable Tomcat service
+  systemd:
+   name: tomcat
+   state: started
+   enabled: true
+   daemon_reload: true
+   
+- name: Health Check
+  uri:
+    url: 'http://{{ ubuntu_server }}:8080/{{ artifact_wrong }}'
+    status_code: 200

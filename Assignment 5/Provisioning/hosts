@@ -1,0 +1,5 @@
+[ubuntu]
+13.58.79.231 ansible_user=ubuntu
+
+[redhat]
+3.134.108.249 ansible_user=ec2-user
